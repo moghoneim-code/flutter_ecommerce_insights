@@ -90,11 +90,9 @@ The application is designed to work seamlessly across mobile, tablet, and web pl
 
 ```dart
 final screenWidth = MediaQuery.of(context).size.width;
-if (screenWidth > 800) {
-  // Web/Desktop layout
-} else if (screenWidth > 600) {
-  // Tablet layout
-} else {
+if (screenWidth > 600) {
+  // Web/Desktop layout / tablet
+}  else {
   // Mobile layout
 }
 ```

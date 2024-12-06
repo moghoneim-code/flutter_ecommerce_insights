@@ -10,7 +10,6 @@ This project is a Flutter-based application designed to provide insights into ec
 - [Cloning the Repository](#cloning-the-repository)
 - [Running the Application](#running-the-application)
 - [Design Decisions and Approaches](#design-decisions-and-approaches)
-- [License](#license)
 - [Contributing](#contributing)
 - [Contact](#contact)
 
@@ -138,11 +137,6 @@ The `Provider` package is used for managing application state because:
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
----
 
 ## Contributing
 

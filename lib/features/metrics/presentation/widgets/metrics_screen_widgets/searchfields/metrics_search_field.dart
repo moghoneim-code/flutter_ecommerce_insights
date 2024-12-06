@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MetricsSearchField extends StatelessWidget {
   const MetricsSearchField({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +16,6 @@ class MetricsSearchField extends StatelessWidget {
             color: Colors.black38,
             fontWeight: FontWeight.w700,
           ),
-
           prefixIcon: const Icon(FontAwesomeIcons.search),
           filled: true,
           fillColor: AppColors.appLightBlueGrey,

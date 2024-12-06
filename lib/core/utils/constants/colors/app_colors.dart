@@ -24,6 +24,12 @@ class AppColors {
   static Color appCyan = HexColor('#21B7CA');
   static Color appLightGrey = HexColor('#F7F7F7');
   static Color appLightBlueGrey = Colors.blueGrey[50]!;
+  static Color appBlueColor = HexColor('#2196F3');
+  static Color appGreenColor = HexColor('#4CAF50');
+  static Color appRedColor = HexColor('#F44336');
+  static Color appYellowColor = HexColor('#FFEB3B');
+  static Color appOrangeColor = HexColor('#FF9800');
+  static Color appPurpleColor = HexColor('#9C27B0');
 
 
 

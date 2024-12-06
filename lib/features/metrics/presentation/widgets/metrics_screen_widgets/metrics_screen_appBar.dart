@@ -24,12 +24,13 @@ PreferredSize metricsScreenAppBar() {
             color: Colors.black,
             size: 30,
           ),
-          onPressed: () {},
+          onPressed: () => showDisplayToast(message: 'You Just Clicked The Search Icon'),
         ),
         IconButton(
           icon:  const Icon(FontAwesomeIcons.bell, color: Colors.black
           ),
-          onPressed: () {},
+          onPressed: () => showDisplayToast(message: 'You Just Clicked The Bell Icon')
+
         ),
       ],
     ),

@@ -13,7 +13,7 @@ class Order {
   final String buyer;
   final List<String> tags;
   final OrderStatus status;
-  final String registered;
+  final DateTime registered;
 
   Order({
     required this.id,
@@ -36,7 +36,7 @@ class Order {
     buyer: json["buyer"],
     tags: List<String>.from(json["tags"].map((x) => x)),
     status: statusValues.map[json["status"]]!,
-    registered: json["registered"],
+    registered: DateTime.parse(json["registered"].toString()),
   );
 
 

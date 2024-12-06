@@ -1,8 +1,8 @@
 import 'package:ecommerce_insights/core/utils/constants/colors/app_colors.dart';
 import 'package:ecommerce_insights/features/graph/presentation/widgets/graph_screen_widgets/graph_screen_appBar.dart';
 import 'package:ecommerce_insights/features/graph/presentation/widgets/graph_screen_widgets/graph_screen_monthly_sales_title.dart';
-import 'package:ecommerce_insights/shared/models/order_model.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/shared/models/order_model.dart';
 import '../providers/graph_screen_provider.dart';
 import '../widgets/graph_screen_widgets/graph_screen_chart_widget.dart';
 import 'package:provider/provider.dart';

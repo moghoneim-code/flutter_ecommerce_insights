@@ -1,4 +1,4 @@
-import '../../../../shared/models/order_model.dart';
+import '../../../../core/shared/models/order_model.dart';
 import '../models/OrderMetrics.dart';
 
 /// [CalculateOrderMetrics]

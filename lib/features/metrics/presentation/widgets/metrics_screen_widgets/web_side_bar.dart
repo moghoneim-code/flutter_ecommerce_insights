@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../shared/models/order_model.dart';
+import '../../../../../core/shared/models/order_model.dart';
 import '../../../../graph/presentation/screens/graph_screen.dart';
 
 Widget webSideBar(

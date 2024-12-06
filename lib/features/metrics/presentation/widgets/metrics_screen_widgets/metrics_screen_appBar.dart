@@ -1,8 +1,8 @@
-import 'package:ecommerce_insights/shared/use_cases/show_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../../../core/shared/Utils/show_toast.dart';
 import '../../../../../core/utils/constants/colors/app_colors.dart';
 
 PreferredSize metricsScreenAppBar() {

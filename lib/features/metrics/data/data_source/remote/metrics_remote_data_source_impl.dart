@@ -1,7 +1,7 @@
 import 'package:ecommerce_insights/core/utils/constants/strings/local_path_strings.dart';
-import 'package:ecommerce_insights/shared/models/order_model.dart';
 import 'package:flutter/services.dart';
 
+import '../../../../../core/shared/models/order_model.dart';
 import '../../../domain/repositories/metrics_remote_data_source.dart';
 
 /// [MetricsRemoteDataSourceImpl]

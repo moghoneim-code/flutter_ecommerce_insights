@@ -1,12 +1,13 @@
 import 'package:ecommerce_insights/features/graph/presentation/screens/graph_screen.dart';
 import 'package:ecommerce_insights/features/metrics/presentation/widgets/metrics_screen_widgets/metrics_gridview/metrics_grid.dart';
 import 'package:ecommerce_insights/features/metrics/presentation/widgets/metrics_screen_widgets/buttons/metrics_screen_showMoreButton.dart';
-import 'package:ecommerce_insights/shared/widgets/grid_placeHolder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../../core/shared/enums/view_state.dart';
+import '../../../../core/shared/models/order_model.dart';
+import '../../../../core/shared/widgets/grid_placeHolder.dart';
 import '../../../../core/utils/constants/colors/app_colors.dart';
-import '../../../../shared/enums/view_state.dart';
-import '../../../../shared/models/order_model.dart';
+
 import '../../data/data_source/remote/metrics_remote_data_source_impl.dart';
 import '../../domain/models/OrderMetrics.dart';
 import '../providers/metrics_provider.dart';

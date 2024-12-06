@@ -96,6 +96,9 @@ if (screenWidth > 600) {
 }
 ```
 
+- ** You Will find the Order.dart model in the shared folder , as it is used in the different screens.
+- ** Please Note :  the feature [graph] doesn't have a data layer as there is no data to be fetched from the server, because i passed the data as a list of objects in the screen itself.
+
 This ensures the app looks good on various devices without the need for separate codebases.
 
 #### Custom Widgets for Responsivity

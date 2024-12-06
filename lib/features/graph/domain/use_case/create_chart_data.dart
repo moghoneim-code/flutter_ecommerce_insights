@@ -1,5 +1,6 @@
 import 'package:ecommerce_insights/features/graph/domain/models/order_time_series.dart';
-import 'package:ecommerce_insights/shared/models/order_model.dart';
+
+import '../../../../core/shared/models/order_model.dart';
 
 /// [CreateChartData]
 /// A utility class that processes a list of `Order` objects to generate

@@ -2,7 +2,7 @@ import 'package:ecommerce_insights/core/utils/constants/colors/app_colors.dart';
 import 'package:ecommerce_insights/features/metrics/presentation/widgets/metrics_screen_widgets/metrics_gridview/metrics_card/metrics_responsive_card_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../../../../shared/enums/metrics_arrow_direction.dart';
+import '../../../../../../core/shared/enums/metrics_arrow_direction.dart';
 import '../../../../domain/models/OrderMetrics.dart';
 
 

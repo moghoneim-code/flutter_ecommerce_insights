@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:ecommerce_insights/shared/extensions/convert_string_to_price.dart';
+import 'package:ecommerce_insights/core/shared/extensions/convert_string_to_price.dart';
 
 
 

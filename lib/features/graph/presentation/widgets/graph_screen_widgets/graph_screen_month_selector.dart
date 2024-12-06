@@ -1,8 +1,9 @@
 import 'package:ecommerce_insights/core/utils/constants/colors/app_colors.dart';
 import 'package:ecommerce_insights/features/graph/presentation/providers/graph_screen_provider.dart';
-import 'package:ecommerce_insights/shared/enums/months.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../../../../core/shared/enums/months.dart';
 
 /// [GraphScreenMonthSelector]
 /// A widget that provides a horizontal list of months for selection.

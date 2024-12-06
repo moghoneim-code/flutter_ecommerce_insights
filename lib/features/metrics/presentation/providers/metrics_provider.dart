@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:ecommerce_insights/shared/enums/view_state.dart';
-import 'package:ecommerce_insights/shared/models/order_model.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../../../../core/shared/enums/view_state.dart';
+import '../../../../core/shared/models/order_model.dart';
 import '../../domain/models/OrderMetrics.dart';
 import '../../domain/repositories/metrics_remote_data_source.dart';
 import '../../domain/use_case/CalculateOrderMetrics.dart';

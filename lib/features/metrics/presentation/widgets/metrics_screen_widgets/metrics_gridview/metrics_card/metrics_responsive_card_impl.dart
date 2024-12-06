@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../../shared/enums/metrics_arrow_direction.dart';
+import '../../../../../../../core/shared/enums/metrics_arrow_direction.dart';
 import 'metrics_responsive_card.dart';
 
 /// [MetricsCard]

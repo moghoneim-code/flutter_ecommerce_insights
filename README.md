@@ -126,7 +126,7 @@ Widgets like `ListView.builder` and `Expanded` are used to handle dynamic conten
 - **Reusability:** Common responsive components can be reused across the application, reducing duplication.
 - **Future-proofing:** By detecting screen sizes dynamically, the app can easily adapt to new devices or form factors.
 - **Please Note :**  the feature [graph] doesn't have a data layer as there is no data to be fetched from the server, because i passed the data as a list of objects in the screen itself.
-- **You Will find** the [Order.dart] model in the shared folder , as it is used in the different screens.
+- **You Will find** the [Order.dart] model in the shared folder , as it is used in the different Features.
 
 ---
 

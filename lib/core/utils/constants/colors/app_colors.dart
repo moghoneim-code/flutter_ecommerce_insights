@@ -22,6 +22,10 @@ class AppColors {
   static Color appBlueGreen = HexColor('#607D8B');
   static Color appOrange = HexColor('#FF9800');
   static Color appCyan = HexColor('#21B7CA');
+  static Color appLightGrey = HexColor('#F7F7F7');
+  static Color appLightBlueGrey = Colors.blueGrey[50]!;
+
+
 
   // COLORS WITH OPACITY
   static Color appWhite70Opacity = HexColor('#FFFFFF').withOpacity(0.70);

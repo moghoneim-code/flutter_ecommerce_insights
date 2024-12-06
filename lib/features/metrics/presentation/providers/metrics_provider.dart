@@ -10,7 +10,9 @@ import '../../domain/use_case/CalculateOrderMetrics.dart';
 class MetricsProvider extends ChangeNotifier {
   final MetricsRemoteDataSource ? repository;
 
-  OrderMetrics? metrics;
+  OrderMetrics? _metrics;
+
+  OrderMetrics? get metrics => _metrics;
 
   ViewState _state = ViewState.initial;
 
@@ -35,7 +37,7 @@ class MetricsProvider extends ChangeNotifier {
     state = ViewState.loading;
     notifyListeners();
     final orders = await repository!.fetchProjectOrders();
-    metrics = CalculateOrderMetrics(orders).execute();
+    _metrics = CalculateOrderMetrics(orders).execute();
     log(metrics!.averagePrice.toString());
     state = ViewState.loaded;
     notifyListeners();
@@ -45,6 +47,11 @@ class MetricsProvider extends ChangeNotifier {
 
   set state(ViewState value) {
     _state = value;
+    notifyListeners();
+  }
+
+  set metrics(OrderMetrics? value) {
+    _metrics = value;
     notifyListeners();
   }
 }

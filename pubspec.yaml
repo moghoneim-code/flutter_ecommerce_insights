@@ -38,9 +38,16 @@ dependencies:
 
 
 
+
   ##### style ########
 
   google_fonts: ^6.2.1
+  font_awesome_flutter: ^9.2.0
+  fluttertoast: ^8.2.8
+  redacted: ^1.0.12
+  shimmer: ^3.0.0
+  auto_size_text: ^3.0.0
+  responsive_framework: ^1.5.1
 
 
   ##### state management ########

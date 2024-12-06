@@ -64,7 +64,7 @@ class Order {
 enum OrderStatus {
   DELIVERED,
   ORDERED,
-  RETURNED
+  RETURNED,
 }
 
 final statusValues = EnumValues({

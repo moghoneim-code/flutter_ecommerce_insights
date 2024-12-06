@@ -1,9 +1,18 @@
+import 'package:ecommerce_insights/features/metrics/presentation/widgets/metrics_screen_widgets/metrics_gridview/metrics_grid.dart';
+import 'package:ecommerce_insights/features/metrics/presentation/widgets/metrics_screen_widgets/buttons/metrics_screen_showMoreButton.dart';
+import 'package:ecommerce_insights/shared/widgets/grid_placeHolder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../core/utils/constants/colors/app_colors.dart';
 import '../../../../shared/enums/view_state.dart';
-import '../../data/repositories/data_source/remote/metrics_remote_data_source_impl.dart';
+import '../../data/data_source/remote/metrics_remote_data_source_impl.dart';
+import '../../domain/models/OrderMetrics.dart';
 import '../providers/metrics_provider.dart';
+import '../widgets/metrics_screen_widgets/titles/metrics_pinned_title.dart';
+import '../widgets/metrics_screen_widgets/metrics_screen_appBar.dart';
+import '../widgets/metrics_screen_widgets/titles/metrics_screen_title.dart';
+import '../widgets/metrics_screen_widgets/searchfields/metrics_search_field.dart';
 
 class MetricsScreen extends StatelessWidget {
   const MetricsScreen({super.key});
@@ -29,42 +38,84 @@ class MetricsScreenView extends StatefulWidget {
 class _MetricsScreenViewState extends State<MetricsScreenView> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<MetricsProvider>(builder: (context, p, _ ) {
-      return  Scaffold(
-        body: Center(
-          child: (p.state == ViewState.loading)
-              ? const CircularProgressIndicator()
-              : (p.state == ViewState.failed)
-                  ? Text('Failed to load metrics')
-                  : (p.metrics == null)
-                      ? Text('No metrics available')
-                      : ListView(
-                        padding: const EdgeInsets.all(16),
-                        children: [
-                          _buildMetricCard('Total Orders', p.metrics!.totalOrders.toString()),
-                          _buildMetricCard('Total Revenue', '\$${p.metrics!.totalOrders.toStringAsFixed(2)}'),
-                          _buildMetricCard('Average Price', '\$${p.metrics!.averagePrice.toStringAsFixed(2)}'),
-                          _buildMetricCard('Average Quantity', p.metrics!.returnedOrders.toStringAsFixed(2)),
-                        ],
+    return Consumer<MetricsProvider>(builder: (context, p, _) {
+      return Scaffold(
+        backgroundColor: AppColors.appLightGrey,
+        appBar: metricsScreenAppBar(),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            // Adjust layout based on screen width
+            if (constraints.maxWidth < 600) {
+              // Mobile Layout
+              return _buildBody(
+                  state: p.state, metrics: p.metrics, isWeb: false);
+            } else {
+              // Web/Desktop Layout
+              return Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Sidebar for web or desktop (if needed)
+                  Container(
+                    width: 250,
+                    color: Colors.grey[200],
+                    child: Center(
+                      child: Text(
+                        'Sidebar Content',
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: _buildBody(
+                        state: p.state, metrics: p.metrics, isWeb: true),
+                  ),
+                ],
+              );
+            }
+          },
         ),
-      ));
+      );
     });
   }
 
-  Widget _buildMetricCard(String title, String value) {
-    return Card(
-      margin: EdgeInsets.symmetric(vertical: 8),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(title, style: TextStyle(fontSize: 18)),
-            Text(value, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-          ],
-        ),
+  Widget _buildBody(
+      {required ViewState state,
+      required OrderMetrics? metrics,
+      required bool isWeb}) {
+    switch (state) {
+      case ViewState.loading:
+        return const GridPlaceholder(itemsCount: 3);
+      case ViewState.failed:
+        return const Center(child: Text('Failed to load metrics'));
+      case ViewState.loaded:
+        return _widgetsList(metrics: metrics!, isWeb: isWeb);
+      default:
+        return const SizedBox();
+    }
+  }
+
+  Widget _widgetsList({required OrderMetrics metrics, required bool isWeb}) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: isWeb ? 32.0 : 16.0, // Wider padding for web
+      ),
+      child: ListView(
+        children: [
+          metricsScreenTitle(),
+          const MetricsSearchField(),
+          const SizedBox(height: 16),
+          metricsPinnedTitle(),
+          MetricsGrid(metrics: metrics),
+          const SizedBox(height: 16),
+          metricsScreenShowMoreButton(
+            context: context,
+            message: 'Display More insights',
+            onPressed: () {
+              // Action for "Show More Insights" button
+            },
+          ),
+        ],
       ),
     );
   }
-
 }
